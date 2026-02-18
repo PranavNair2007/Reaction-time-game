@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your reflexes with this Reaction Time Game. How fast can you react?">
+    <title>⚡ Reaction Time Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="game-wrapper">
+
+        <section class="state state--welcome active" id="stateWelcome">
+            <div class="logo">
+                <span class="logo__bolt">⚡</span>
+                <h1 class="logo__title">Reaction<span class="logo__highlight">Time</span></h1>
+            </div>
+            <p class="subtitle">How fast are your reflexes?</p>
+            <button class="btn btn--primary" id="btnStart">
+                <span class="btn__text">Start Game</span>
+                <span class="btn__icon">→</span>
+            </button>
+        </section>
+
+        <section class="state state--waiting" id="stateWaiting">
+            <div class="state-icon">🛑</div>
+            <h2 class="state-heading">Wait for it...</h2>
+            <p class="state-sub">Don't click yet!</p>
+        </section>
+
+        <section class="state state--go" id="stateGo">
+            <div class="state-icon state-icon--bounce">🟢</div>
+            <h2 class="state-heading">CLICK NOW!</h2>
+            <p class="state-sub">As fast as you can!</p>
+        </section>
+
+        <section class="state state--early" id="stateEarly">
+            <div class="state-icon state-icon--shake">😬</div>
+            <h2 class="state-heading">Too Early!</h2>
+            <p class="state-sub">You clicked before the signal.</p>
+            <button class="btn btn--retry" id="btnRetryEarly">
+                <span class="btn__text">Try Again</span>
+                <span class="btn__icon">↻</span>
+            </button>
+        </section>
+
+        <section class="state state--result" id="stateResult">
+            <div class="result-display">
+                <p class="result-label">Your Reaction Time</p>
+                <div class="result-time">
+                    <span class="result-time__value" id="resultTime">0</span>
+                    <span class="result-time__unit">ms</span>
+                </div>
+                <div class="result-badge" id="resultBadge">
+                    <span class="result-badge__icon"></span>
+                    <span class="result-badge__text"></span>
+                </div>
+            </div>
+            <div class="result-actions">
+                <button class="btn btn--primary" id="btnPlayAgain">
+                    <span class="btn__text">Play Again</span>
+                    <span class="btn__icon">↻</span>
+                </button>
+                <button class="btn btn--secondary" id="btnHome">
+                    <span class="btn__text">Home</span>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
